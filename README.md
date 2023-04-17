@@ -1,4 +1,4 @@
-![altern8_logo](https://user-images.githubusercontent.com/26333525/232516160-6243f5ad-051a-4e58-8332-6ab4a439f12d.png)
+![alt8 long](https://user-images.githubusercontent.com/26333525/232536382-482f6a8e-66ab-40f0-a7f0-c5374aea14d3.png)
 
 
 # Altern8
@@ -64,11 +64,19 @@ The shell offers several ways to load and run Altern8 files:
 ## Built-in Commands
 The shell provides several built-in commands for working with Altern8 scripts and managing the shell environment. Here is a summary of the available commands:
 
-* **run():** Run an Altern8 file. See the section above for different ways to load and run files.
-* **quit():** Quit the interpreter CLI.
+* **run():** Run an Altern8 file. *See the section above for different ways to load and run files.*
+* **quit:** Quit the interpreter CLI.
 * **docs:** Access the Altern8 documentation.
 
 For more information on these commands and additional functionality, type docs in the shell to access the Altern8 documentation.
 
 ## Language Examples
 Please refer to the original README file for examples of each language feature in Altern8 syntax.
+
+## Changelog
+
+0.0.1 - Initial Release
+First release of Altern8.
+Basic language functionality implemented.
+0.0.2 - New Builtin Function Added
+Added a new builtin function get_functions() to retrieve functions from an .alt8 file.
