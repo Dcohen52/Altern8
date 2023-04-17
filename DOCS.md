@@ -12,7 +12,7 @@ Variables in Altern8 can be assigned using the var keyword. For example: `var a 
 ### User Input
 User input in Altern8 can be obtained using the `input()` function. For integer input, the `input_int()` function can be used.
 
-### Printing
+## Printing
 The `print()` function is used to print output to the console screen. It has two parameters: `output` and `separator`. For example:
 ```
 print("Hello", " ")
@@ -23,7 +23,7 @@ This will output `"Hello world"` with a space between the words. The `nl` parame
 print("Hello", "nl")
 print("World", "nl")
 ```
-### Lists
+## Lists
 Altern8 supports basic list functionalities like adding an element, removing an element, extending another list, and finding the length of a list. To access an element of a list, use the index value followed by the `@` symbol. For example: `print(l @ 0, "nl")`, which returns the value of the `0th` index value, i.e., `1`.
 
 An element can be added to the list using the `append()` function or the `+` symbol. For example:
@@ -43,7 +43,7 @@ l1 * l2 # same as extend function
 ```
 To find the length of a list, use the `len()` function. For example: `print(len(l), "nl")`, which outputs the length of the list `l`.
 
-### Strings
+## Strings
 To concatenate two strings in Altern8, use the `+` symbol. To embed the value of a variable into a string, use `{}`. For example:
 ```
 var num = 5
@@ -51,7 +51,7 @@ print("The number is : { num }", "nl") # outputs "The number is : 5"
 ```
 If the variable is not declared, it prints the same string, i.e., `"The number is : { num }"`.
 
-### For Loops
+## For Loops
 A for loop can have a single statement without a new line. For example:
 `for i = 1 to 6 then print(i, ",")`
 
@@ -60,7 +60,7 @@ This will print 1, 2, 3, 4, 5. The `step` value can be used to jump values. For 
 
 This will print 1, 3, 5. The `break` and `continue` keywords can also be used in a for loop.
 
-### While Loop
+## While Loop
 A while loop can be used to loop the block of statements for a given number of times. For example:
 
 ```
@@ -73,7 +73,7 @@ print(sum, "nl")
 ```
 This will run the loop from 1 to 5 and print 15. The break and continue keywords can also be used in a while loop.
 
-### If Statement
+## If Statement
 The `if` statement in Altern8 is used to run the block of statements if the condition is true. For example:
 
 ```
@@ -100,7 +100,7 @@ else
 end # outputs "world"
 ```
 
-### Functions
+## Functions
 Functions in Altern8 can be used to write a block of statements once and can be used many number of times. The define keyword is used for function declaration. A single line statement can be used with the -> symbol. For example:
 
 ```
@@ -125,3 +125,4 @@ print(sum, "nl") # outputs <anonymous function>
 print(sum(1,2), "nl") # outputs 3
 ```
 The `is_func()` function returns true if the element passed to it is a function.
+
