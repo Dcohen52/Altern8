@@ -1,0 +1,6 @@
+print("What is your name?", " ")
+var name = read()
+print("What is your age?", " ")
+var age = read_int()
+
+print("your name is {name}, and you age is {age}", " ")

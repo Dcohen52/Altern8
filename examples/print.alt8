@@ -1,0 +1,6 @@
+print("Hello", " ")
+print("world", "nl")
+print("Hello", "nl")
+print("world", "nl")
+var num = 5
+print("The number is: {num}", "nl")

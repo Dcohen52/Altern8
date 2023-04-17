@@ -1,0 +1,9 @@
+var sum = 0
+var i = 1
+
+while i <= 6 then
+  $sum = sum + i
+  $i = i + 1
+end
+
+print(sum, "nl")

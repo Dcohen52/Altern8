@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Altern8 • Programming Language</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js"></script>
+</head>
+
+<body>
+    <!-- <div id="background-gradient">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+    </div> -->
+    <div id="get-started-page" class="content active">
+        <header>
+            <img id="altern8-logo" src="static\styles\img\logo_white.png" alt="altern8 logo" srcset="">
+            <div id="top-bar">
+                <a href="/"><input id="get-started-button" type="button" class="top-bar-btn" value="get started"></a>
+                <a href="documentation.html"><input id="documentation-button" type="button" class="top-bar-btn"
+                        value="documentation"></a>
+                <a href="downloads.html"><input id="downloadss-button" type="button" class="top-bar-btn"
+                        value="downloads"></a>
+                <a href="alpin.html"><input id="alpin-button" type="button" class="top-bar-btn" value="ALPIN"></a>
+                <input id="contact-button" type="button" class="top-bar-btn" value="contact">
+                <a href="playground.html"><input id="playground-button" type="button" class="top-bar-try"
+                        value="playground"></a>
+            </div>
+        </header>
+        <div id="get-started-top-section">
+            <h1>ALPIN: Altern8 Package Index</h1>
+            <p id="get-started-par">ALPIN: The Package Manager for Altern8 - Coming soon.</p>
+
+            <div id="alpin-search-area">
+                <input id="alpin-search-bar" type="text" placeholder="Search for package">
+                <input type="button" class="search-btn" value="Search">
+            </div>
+
+        </div>
+        <footer>
+            <p class="footer-stuff">Developed and Maintained by Dekel Cohen © 2023</p>
+            <p class="footer-stuff" id="altern8-version">Altern8 (v1.0.0, February 07, 2023 09:00:51) on darwin
+            </p>
+        </footer>
+    </div>
+
+    <script src="{{url_for('static', filename='js/switch-handler.js')}}"></script>
+    <script src="{{url_for('static', filename='js/homepage.js')}}"></script>
+    <script src="{{url_for('static', filename='js/downloads.js')}}"></script>
+    <script src="{{url_for('static', filename='js/documentation.js')}}"></script>
+    <script src="{{url_for('static', filename='js/playground.js')}}"></script>
+</body>
+
+</html>

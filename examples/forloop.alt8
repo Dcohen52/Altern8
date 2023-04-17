@@ -1,0 +1,14 @@
+var sum = 0
+var fact = 1
+
+for i = 1 to 6 then
+  $fact = fact * i
+  $sum = sum + i
+end
+
+print(fact, ",")
+print(sum, "nl")
+
+for i = 1 to 6 then print(i, ",")
+for i = 1 to 6 step 2 then print(i, ",")
+for i = 6 to 1 step -2 then print(i, ",")

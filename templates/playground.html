@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+  <title>Altern8 • Programming Language</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js"></script>
+</head>
+
+<body>
+  <!-- <div id="background-gradient">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+    <div class="circle4"></div>
+    <div class="circle5"></div>
+  </div> -->
+  <div id="playground-page" class="content active">
+    <header>
+      <img id="altern8-logo" src="static\styles\img\logo_white.png" alt="altern8 logo" srcset="">
+      <div id="top-bar">
+        <a href="/"><input id="get-started-button" type="button" class="top-bar-btn" value="get started"></a>
+        <a href="documentation.html"><input id="documentation-button" type="button" class="top-bar-btn"
+            value="documentation"></a>
+        <a href="downloads.html"><input id="downloadss-button" type="button" class="top-bar-btn" value="downloads"></a>
+        <a href="alpin.html"><input id="alpin-button" type="button" class="top-bar-btn" value="ALPIN"></a>
+        <input id="contact-button" type="button" class="top-bar-btn" value="contact">
+        <a href="playground.html"><input id="playground-button" type="button" class="top-bar-try"
+            value="playground"></a>
+      </div>
+    </header>
+    <div class="main-container">
+      <main class="notebook-container">
+        <div id="side-bar">
+          <div id="run-button" class="side-bar-run" onclick="runCode(1)">
+            <img id="run-icon" src="static\styles\img\run_icon.png" alt="clear button" srcset="">
+          </div>
+          <div class="divider"></div>
+          <div id="clear-button" class="side-bar-btn" onclick="clearCell()">
+            <img id="clear-icon" src="static\styles\img\clear_icon.png" alt="clear button" srcset="">
+          </div>
+          <div id="docs-button" class="side-bar-btn" onclick="Docs()">
+            <img id="docs-icon" src="static\styles\img\docs_icon.png" alt="clear button" srcset="">
+          </div>
+          <div id="downloads-button" class="side-bar-btn" onclick="Downloads()">
+            <img id="downloads-icon" src="static\styles\img\download_icon.png" alt="clear button" srcset="">
+          </div>
+          <div id="examples-button" class="side-bar-btn" onclick="Examples()">
+            <img id="examples-icon" src="static\styles\img\examples_icon.png" alt="clear button" srcset="">
+          </div>
+        </div>
+        <div class="cell">
+          <div class="cell-input-container">
+            <h4 class="subtitle">Input</h4>
+            <div class="line-numbers"></div>
+            <textarea class="cell-input" id="input-1" rows="6" placeholder="Enter your code here..."></textarea>
+            <!-- <div id="editor"></div> -->
+          </div>
+          <div class="vertical-divider"></div>
+          <div class="cell-output-container">
+
+            <h4 class="subtitle">Output</h4>
+            <pre class="cell-output" id="output-1"></pre>
+          </div>
+        </div>
+      </main>
+
+    </div>
+    <div id="inputModal" class="modal">
+      <div class="modal-content">
+        <div id="top-modal">
+          <h2 class="modal-title">Please enter a value:</h2>
+
+          <span class="close">&times;</span>
+        </div>
+        <div class="divider-long"></div>
+        <input type="text" id="modal-input">
+        <button id="modal-submit">Submit</button>
+      </div>
+    </div>
+    <div id="examplesModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Examples</h2>
+        <input type="number" id="modal-input">
+        <button id="modal-submit">Submit</button>
+        <button id="modal-submit2">Submit</button>
+        <button id="modal-submit3">Submit</button>
+        <button id="modal-submit4">Submit</button>
+        <button id="modal-submit5">Submit</button>
+        <button id="modal-submit6">Submit</button>
+      </div>
+    </div>
+    <footer>
+      <p class="footer-stuff">Developed and Maintained by Dekel Cohen © 2023</p>
+      <p class="footer-stuff" id="altern8-version">Altern8 (v1.0.0, February 07, 2023 09:00:51) on darwin
+      </p>
+    </footer>
+  </div>
+  <script src="{{url_for('static', filename='js/switch-handler.js')}}"></script>
+  <script src="{{url_for('static', filename='js/homepage.js')}}"></script>
+  <script src="{{url_for('static', filename='js/downloads.js')}}"></script>
+  <script src="{{url_for('static', filename='js/documentation.js')}}"></script>
+  <script src="{{url_for('static', filename='js/playground.js')}}"></script>
+</body>
+
+</html>

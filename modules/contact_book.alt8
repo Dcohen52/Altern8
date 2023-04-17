@@ -1,0 +1,4 @@
+while true then
+  print("Hello", "nl")
+
+end

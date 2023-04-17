@@ -1,0 +1,6 @@
+print(1 + 2, "nl")
+print(5 - 3, "nl")
+print(2 * 3, "nl")
+print(6 / 2, "nl")
+print(5 % 2, "nl")
+print(2 ** 3, "nl")

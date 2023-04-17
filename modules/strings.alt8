@@ -1,0 +1,4 @@
+print("Hello " + "world", "nl")
+var num = 5
+print("The number is: {num}", "nl")
+print(is_str("hello"), "nl")

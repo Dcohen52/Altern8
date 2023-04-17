@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Altern8 • Programming Language</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js"></script>
+</head>
+
+<body>
+    <!-- <div id="background-gradient">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+    </div> -->
+    <div id="get-started-page" class="content active">
+        <header>
+            <img id="altern8-logo" src="static\styles\img\logo_white.png" alt="altern8 logo" srcset="">
+            <div id="top-bar">
+                <a href="/"><input id="get-started-button" type="button" class="top-bar-btn" value="get started"></a>
+                <a href="documentation.html"><input id="documentation-button" type="button" class="top-bar-btn"
+                        value="documentation"></a>
+                <a href="downloads.html"><input id="downloadss-button" type="button" class="top-bar-btn"
+                        value="downloads"></a>
+                <a href="alpin.html"><input id="alpin-button" type="button" class="top-bar-btn" value="ALPIN"></a>
+                <input id="contact-button" type="button" class="top-bar-btn" value="contact">
+                <a href="playground.html"><input id="playground-button" type="button" class="top-bar-try"
+                        value="playground"></a>
+            </div>
+        </header>
+        <div id="get-started-top-section">
+            <h1>DOCS PAGE</h1>
+            <p id="get-started-par">Altern8 is a programming language designed to make coding easy and fast.
+                Write elegant and efficient code with ease, and explore the possibilities of what you can create.</p>
+            <input id="get-started-top-button" type="button" class="top-bar-try" value="Get Started">
+        </div>
+        <div class="center-section">
+            <div id="get-started-section">
+                <div class="par-row top-75">
+                    <div id="docs-par-main">
+                        <img id="docs-par-image" src="static\styles\img\docs.png" alt="docs image">
+                        <div id="docs-par-text">
+                            <h3 class="par-title">Docs</h3>
+                            <p class="par-text">Comprehensive documentation for Altern8, including user manuals, API
+                                references,
+                                tutorials, and example code.</p>
+                        </div>
+                    </div>
+                    <div id="ext-par-main">
+                        <img id="ext-par-image" src="static\styles\img\extension.png" alt="vscode extension image">
+                        <div id="ext-par-text">
+                            <div class="coming-soon-row">
+                                <h3 class="par-title">VSCode Extension</h3>
+                                <a class="new-tag"
+                                    href="https://marketplace.visualstudio.com/items?itemName=Altern8.altern8-language-support">
+                                    <p>Get here!</p>
+                                </a>
+                            </div>
+                            <p class="par-text">Offers syntax highlighting and indentation support, enabling developers
+                                to write code
+                                more efficiently and effectively
+                                within their preferred text editor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="par-row top-30">
+                    <div id="playground-par-main">
+                        <img id="playground-par-image" src="static\styles\img\playground.png" alt="docs image">
+                        <div id="playground-par-text">
+                            <h3 class="par-title">Playground</h3>
+                            <p class="par-text">Online interpreter that offers an easy and convenient way for developers
+                                to run
+                                Altern8
+                                code in a sandboxed environment.</p>
+                        </div>
+                    </div>
+                    <div id="ide-par-main">
+                        <img id="ide-par-image" src="static\styles\img\ide.png" alt="vscode extension image">
+                        <div id="ide-par-text">
+                            <div class="coming-soon-row">
+                                <h3 class="par-title">Altern8 IDE</h3>
+                                <div class="coming-soon">
+                                    <p>Coming Soon</p>
+                                </div>
+                            </div>
+                            <p class="par-text">Offers a range of features for developers, making it easier for
+                                developers to write
+                                high-quality code in the Altern8
+                                language.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p class="footer-stuff">Developed and Maintained by Dekel Cohen © 2023</p>
+            <p class="footer-stuff" id="altern8-version">Altern8 (v1.0.0, February 07, 2023 09:00:51) on darwin
+            </p>
+        </footer>
+    </div>
+
+    <script src="{{url_for('static', filename='js/switch-handler.js')}}"></script>
+    <script src="{{url_for('static', filename='js/homepage.js')}}"></script>
+    <script src="{{url_for('static', filename='js/downloads.js')}}"></script>
+    <script src="{{url_for('static', filename='js/documentation.js')}}"></script>
+    <script src="{{url_for('static', filename='js/playground.js')}}"></script>
+</body>
+
+</html>

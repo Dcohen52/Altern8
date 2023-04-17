@@ -1,0 +1,3 @@
+print(true and false, "nl")
+print(true or false, "nl")
+print(not true, "nl")

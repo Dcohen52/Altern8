@@ -1,0 +1,4 @@
+print(5 & 3, "nl")
+print(5 | 3, "nl")
+print(5 ^ 3, "nl")
+print(~5, "nl")

@@ -1,0 +1,15 @@
+define fact_iter(n)
+    var result = 1
+    for i = 1 to n+1 then $result = result * i
+    return result
+end
+
+define fact_recur(n) -> if n == 1 then return n else return n * fact_recur(n-1)
+
+print("Enter the number :", " ")
+var n = read_int()
+print(n, "\n")
+print("Factorial of { n } through iteration is: ", " ")
+print(fact_iter(n), "\n")
+print("Factorial of { n } through recursion is: ", " ")
+print(fact_recur(n), "\n")

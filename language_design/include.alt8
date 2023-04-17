@@ -1,0 +1,78 @@
+Syntax
+To include a module in your Altern8 code, you can use the following syntax:
+
+    include("module_name")
+
+Here, "module_name" refers to the name of the module you want to include.
+
+Search Path
+The "include" functionality should have a search path to locate the module you want to include. The search path should be a list of directories that the interpreter will search for the module.
+You can specify the search path for the "include" functionality in your Altern8 code using the following syntax:
+
+
+search_path path1 path2 path3 ...
+Here, "path1", "path2", "path3", etc. refer to the directories you want to add to the search path. The directories should be separated by whitespace.
+
+If you don't specify a search path in your code, the interpreter should use a default search path.
+
+Loading Modules
+When you include a module in your code, the interpreter should load the module into memory and make its functionality available to your code.
+To load a module, the interpreter should perform the following steps:
+
+Search the search path for the module.
+If the module is found, load it into memory.
+If the module imports other modules, recursively load those modules.
+Make the functionality of the module available to your code.
+Namespace
+When you include a module in your code, the interpreter should create a namespace for the module. This namespace should contain all the names defined in the module.
+To access a name in the namespace of an included module, you can use the following syntax:
+
+
+module_name.name
+Here, "module_name" refers to the name of the module, and "name" refers to the name you want to access.
+
+Examples
+Here are some examples of how you can use the "include" functionality in your Altern8 code:
+Example 1: Include a module with a default search path
+
+include my_module
+Here, the interpreter will search for the "my_module" module in the default search path.
+
+Example 2: Include a module with a custom search path
+
+search_path /path/to/module /other/path/to/module
+include my_module
+Here, the interpreter will search for the "my_module" module in the "/path/to/module" and "/other/path/to/module" directories.
+
+Example 3: Access a name in an included module
+
+include my_module
+my_module.my_function()
+Here, the "my_function" name is defined in the namespace of the "my_module" module.
+
+
+
+# Define the search path for modules
+search_path = ['/path/to/modules', '/other/path/to/modules']
+
+# Define a function to load modules
+def load_module(module_name, search_path):
+    # Search for the module in the search path
+    for directory in search_path:
+        module_path = directory + '/' + module_name + '.alt8'
+        if exists(module_path):
+            # Load the module into memory
+            module_code = read_file(module_path)
+            module_namespace = {}
+            exec(module_code, module_namespace)
+            return module_namespace
+    # If the module is not found, raise an error
+    raise ModuleNotFoundError("Module '{}' not found in search path".format(module_name))
+
+# Define a function to include a module
+def include(module_name):
+    # Load the module into memory and create a namespace for it
+    module_namespace = load_module(module_name, search_path)
+    # Add the module namespace to the current namespace
+    for name in module_namespace:
+        globals()[name] = module_namespace[name]

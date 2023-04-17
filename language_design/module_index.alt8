@@ -1,0 +1,8 @@
+#TODO: modify the shell to run "alpin get" commands
+#TODO: develop the ALPIN section in Altern8 website.
+
+ALPIN - Altern8 Package Index
+
+    use "alpin get module_name" in the Altern8 shell. #TODO: use arg parsing
+
+ALPIN will host open-source libraries made by users, sorted by subjects.

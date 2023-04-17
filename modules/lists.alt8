@@ -1,0 +1,32 @@
+var l = [1, 2, 3, 4, 5]
+var index = l @ 0
+
+print("Element at index 0: {index}", "nl")
+append(l, 6)
+
+print("List after adding element using append function: {l}", "nl")
+l + 7
+
+print("List after adding element using '+' symbol: {l}", "nl")
+pop(l, 6)
+
+print("List after removing element using pop function: {l}", "nl")
+l - 5
+
+print("List after removing element using '-' symbol: {l}", "nl")
+
+var l1 = [8, 9]
+extend(l, l1)
+print("List after extending another list using extend function: {l}", "nl")
+
+l * [10, 11]
+print("List after extending another list using '*' symbol: {l}", "nl")
+
+print("Length of list: ", " ")
+print(len(l), "nl")
+
+print("Is element a list: ", " ")
+print(is_list(l), "nl")
+
+print("Is element a list: ", " ")
+print(is_list(1), "nl")

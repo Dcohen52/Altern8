@@ -1,0 +1,64 @@
+# This is a program to calculate the area and perimeter of a rectangle
+print("Enter the width of the rectangle: "," ")
+var width = read_int()
+print(width, "nl")
+print("Enter the height of the rectangle: "," ")
+var height = read_int()
+print(height, "nl")
+
+# Function to calculate the area of the rectangle
+define area(w, h)
+    return w * h
+end
+
+# Function to calculate the perimeter of the rectangle
+define perimeter(w, h)
+    return 2 * (w + h)
+end
+
+var rect_area = area(width, height)
+var rect_perimeter = perimeter(width, height)
+
+print("The area of the rectangle is: {rect_area}", "nl")
+print("The perimeter of the rectangle is: {rect_perimeter}", "nl")
+
+# Loop to print the even numbers from 1 to 10
+for i = 1 to 10 then
+    if i % 2 == 0 then
+        print(i, " ")
+    end
+end
+
+# List of numbers
+var num_list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+
+# Function to calculate the average of a list of numbers
+define average(nums)
+    var sum = 0
+    for i = 0 to len(nums)-1 then
+        $sum = sum + nums@i
+    end
+    return sum / len(nums)
+end
+
+var num_avg = average(num_list)
+
+print("The average of the numbers in the list is: {num_avg}", "nl")
+
+# Conditional statement to check if a number is positive, negative or zero
+print("Enter a number: ","nl")
+var num = read_int()
+
+if num > 0 then
+    print("The number is positive", "nl")
+elif num < 0 then
+    print("The number is negative", "nl")
+else
+    print("The number is zero", "nl")
+end
+
+var i = 0
+while i < 5 then
+  print(i, " ")
+  $i = i + 1
+end

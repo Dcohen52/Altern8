@@ -1,0 +1,18 @@
+print("Enter a number: ","")
+var num = read_int()
+print("Enter another number: ","")
+var num2 = read_int()
+print("Enter operation (+, -, *, /): ", "")
+var op = read()
+
+if op == "+" then
+ print(num1 + num2, "nl")
+elif op == "-" then
+ print(num1 - num2, "nl")
+elif op == "*" then
+ print(num1 * num2, "nl")
+elif op == "/" then
+ print(num1 / num2, "nl")
+else
+ print("Invalid operation!", "nl")
+end
