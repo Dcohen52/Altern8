@@ -75,8 +75,31 @@ Please refer to the original README file for examples of each language feature i
 
 ## Changelog
 
-0.0.1 - Initial Release
-First release of Altern8.
-Basic language functionality implemented.
-0.0.2 - New Builtin Function Added
-Added a new builtin function get_functions() to retrieve functions from an .alt8 file.
+### 0.0.1 - Initial Release
+* First release of Altern8.
+* Basic language functionality implemented.
+### 0.0.2 - New Builtin Function Added
+* Added a new builtin function `get_functions()` to retrieve functions from an `.alt8` file.
+* 
+
+## Working on
+### Language:
+* **Module import** - Module import functionality using `include` keyword.
+* **File handling**:
+    * read and write files from the file system.
+    * opening and closing files.
+    * reading and writing text or binary data.
+    * navigating directories.
+* **Expanded common math support**:
+    * trigonometric functions.
+    * logarithms.
+    * rounding.
+* **Error handling**
+* **Concurrency and multithreading**:
+    * threads.
+    * locks.
+    * synchronization.
+* **Networking**
+### Additional:
+* **ALPIN** - Altern8 package index.
+* **Altern8 website** - Feature docs and web interpreter.
