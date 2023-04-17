@@ -6,6 +6,7 @@ from error import *
 from parse_result import *
 from nodes import *
 
+
 ######################
 #####   PARSER  ######
 ######################
@@ -22,19 +23,19 @@ class Parser:
     def increment(self):
         self.tok_index += 1
         self.register_count += 1
-        if self.tok_index >=0 and self.tok_index < len(self.tokens):
+        if self.tok_index >= 0 and self.tok_index < len(self.tokens):
             self.curr_tok = self.tokens[self.tok_index]
 
     def reverse(self):
         self.tok_index -= 1
-        if self.tok_index >=0 and self.tok_index < len(self.tokens):
+        if self.tok_index >= 0 and self.tok_index < len(self.tokens):
             self.curr_tok = self.tokens[self.tok_index]
 
     def parse(self):
         res = self.statements()
         if not res.error and self.curr_tok.type != TT_EOF:
             return res.failure(
-                 InvalidSyntaxError(self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected '+', '-', '*', '/' or '%'")
+                InvalidSyntaxError(self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected '+', '-', '*', '/' or '%'")
             )
 
         return res
@@ -92,7 +93,6 @@ class Parser:
         if res.error: return res
         return res.success(expr)
 
-
     def func_def(self):
         res = ParseResult()
         if not self.curr_tok.matches(TT_KEYWORD, 'define'):
@@ -107,16 +107,16 @@ class Parser:
             self.increment()
             if self.curr_tok.type != TT_LPAREN:
                 return res.failure(InvalidSyntaxError(
-                self.curr_tok.pos_start, self.curr_tok.pos_end,
-                "Expected '('"
-            ))
+                    self.curr_tok.pos_start, self.curr_tok.pos_end,
+                    "Expected '('"
+                ))
         else:
             var_name_tok = None
             if self.curr_tok.type != TT_LPAREN:
                 return res.failure(InvalidSyntaxError(
-                self.curr_tok.pos_start, self.curr_tok.pos_end,
-                "Expected '('"
-            ))
+                    self.curr_tok.pos_start, self.curr_tok.pos_end,
+                    "Expected '('"
+                ))
         self.increment()
         args_name_toks = []
 
@@ -128,12 +128,11 @@ class Parser:
                 self.increment()
                 if self.curr_tok.type != TT_IDENTIFIER:
                     return res.failure(InvalidSyntaxError(
-                    self.curr_tok.pos_start, self.curr_tok.pos_end,
-                    "Expected 'Identifier'"
+                        self.curr_tok.pos_start, self.curr_tok.pos_end,
+                        "Expected 'Identifier'"
                     ))
                 args_name_toks.append(self.curr_tok)
                 self.increment()
-
 
         if self.curr_tok.type != TT_RPAREN:
             return res.failure(InvalidSyntaxError(
@@ -194,20 +193,19 @@ class Parser:
             if res.error:
                 return res.failure(
                     InvalidSyntaxError(
-                    self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected int, float, identifier, 'var'"
+                        self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected int, float, identifier, 'var'"
                     ))
             while self.curr_tok.type == TT_COMMA:
                 self.increment()
                 element_nodes.append(res.register(self.expr()))
                 if res.error: return res
             if self.curr_tok.type != TT_RSQUARE:
-                return  res.failure(
-                        InvalidSyntaxError(
+                return res.failure(
+                    InvalidSyntaxError(
                         self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected ',' or ']'"
                     ))
             self.increment()
         return res.success(ListNode(element_nodes, pos_start, self.curr_tok.pos_end.copy()))
-
 
     def for_expr(self):
         res = ParseResult()
@@ -254,7 +252,7 @@ class Parser:
             step_value = None
 
         if not self.curr_tok.matches(TT_KEYWORD, 'then'):
-                return res.failure(InvalidSyntaxError(
+            return res.failure(InvalidSyntaxError(
                 self.curr_tok.pos_start, self.curr_tok.pos_end,
                 "Expected 'then'"
             ))
@@ -266,8 +264,8 @@ class Parser:
             if res.error: return res
             if not self.curr_tok.matches(TT_KEYWORD, 'end'):
                 return res.failure(InvalidSyntaxError(
-                self.curr_tok.pos_start, self.curr_tok.pos_end,
-                "Expected 'end'"
+                    self.curr_tok.pos_start, self.curr_tok.pos_end,
+                    "Expected 'end'"
                 ))
             self.increment()
             return res.success(ForNode(var_name, start_value, end_value, step_value, body, True))
@@ -288,7 +286,7 @@ class Parser:
         if res.error: return res
 
         if not self.curr_tok.matches(TT_KEYWORD, 'then'):
-                return res.failure(InvalidSyntaxError(
+            return res.failure(InvalidSyntaxError(
                 self.curr_tok.pos_start, self.curr_tok.pos_end,
                 "Expected 'then'"
             ))
@@ -300,8 +298,8 @@ class Parser:
             if res.error: return res
             if not self.curr_tok.matches(TT_KEYWORD, 'end'):
                 return res.failure(InvalidSyntaxError(
-                self.curr_tok.pos_start, self.curr_tok.pos_end,
-                "Expected 'end'"
+                    self.curr_tok.pos_start, self.curr_tok.pos_end,
+                    "Expected 'end'"
                 ))
             self.increment()
             return res.success(WhileNode(condition, body, True))
@@ -338,8 +336,8 @@ class Parser:
                     self.increment()
                 else:
                     return res.failure(InvalidSyntaxError(
-                    self.curr_tok.pos_start, self.curr_tok.pos_end,
-                    "Expected 'END'"
+                        self.curr_tok.pos_start, self.curr_tok.pos_end,
+                        "Expected 'END'"
                     ))
             else:
                 expr = res.register(self.statement())
@@ -368,8 +366,8 @@ class Parser:
 
         if not self.curr_tok.matches(TT_KEYWORD, case_keyword):
             return res.failure(InvalidSyntaxError(
-            self.curr_tok.pos_start, self.curr_tok.pos_end,
-            f"Expected '{case_keyword}'"
+                self.curr_tok.pos_start, self.curr_tok.pos_end,
+                f"Expected '{case_keyword}'"
             ))
 
         self.increment()
@@ -379,8 +377,8 @@ class Parser:
 
         if not self.curr_tok.matches(TT_KEYWORD, 'then'):
             return res.failure(InvalidSyntaxError(
-            self.curr_tok.pos_start, self.curr_tok.pos_end,
-            f"Expected 'then'"
+                self.curr_tok.pos_start, self.curr_tok.pos_end,
+                f"Expected 'then'"
             ))
         self.increment()
 
@@ -432,10 +430,10 @@ class Parser:
                 return res.success(expr)
             else:
                 return res.failure(
-                InvalidSyntaxError(
-                    self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected ')'"
+                    InvalidSyntaxError(
+                        self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected ')'"
+                    )
                 )
-            )
 
         elif tok.type == TT_LSQUARE:
             list_expr = res.register(self.list_expr())
@@ -486,25 +484,25 @@ class Parser:
                 arg_nodes.append(res.register(self.expr()))
                 if res.error:
                     return res.failure(
-                    InvalidSyntaxError(
-                    self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected int, float, identifier, 'var', or ')'"
-                    ))
+                        InvalidSyntaxError(
+                            self.curr_tok.pos_start, self.curr_tok.pos_end,
+                            "Expected int, float, identifier, 'var', or ')'"
+                        ))
                 while self.curr_tok.type == TT_COMMA:
                     self.increment()
                     arg_nodes.append(res.register(self.expr()))
                     if res.error: return res
                 if self.curr_tok.type != TT_RPAREN:
-                    return  res.failure(
+                    return res.failure(
                         InvalidSyntaxError(
-                        self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected ')'"
-                    ))
+                            self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected ')'"
+                        ))
                 self.increment()
             return res.success(CallNode(atom, arg_nodes))
         return res.success(atom)
 
-
     def power(self):
-        return self.bin_op(self.call, (TT_POW, ), self.factor)
+        return self.bin_op(self.call, (TT_POW,), self.factor)
 
     def factor(self):
         res = ParseResult()
@@ -547,7 +545,7 @@ class Parser:
         if res.error:
             return res.failure(InvalidSyntaxError(
                 self.curr_tok.pos_start, self.curr_tok.pos_end,
-                    "Expected int, float, identifier, '+', '-', '(' or 'not'"
+                "Expected int, float, identifier, '+', '-', '(' or 'not'"
             ), self.register_count)
 
         return res.success(node)
@@ -557,7 +555,8 @@ class Parser:
         if self.curr_tok.matches(TT_KEYWORD, 'var'):
             self.increment()
             if self.curr_tok.type != TT_IDENTIFIER:
-                return res.failure(InvalidSyntaxError(self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected Identifier"))
+                return res.failure(
+                    InvalidSyntaxError(self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected Identifier"))
             var_name = self.curr_tok
             self.increment()
             if self.curr_tok.type != TT_EQUAL:
@@ -570,7 +569,8 @@ class Parser:
         elif self.curr_tok.type == TT_DOL:
             self.increment()
             if self.curr_tok.type != TT_IDENTIFIER:
-                return res.failure(InvalidSyntaxError(self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected Identifier"))
+                return res.failure(
+                    InvalidSyntaxError(self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected Identifier"))
             var_name = self.curr_tok
             self.increment()
             if self.curr_tok.type == TT_AT:
@@ -578,7 +578,8 @@ class Parser:
                 index = res.register(self.expr())
                 if res.error: return res
                 if self.curr_tok.type != TT_EQUAL:
-                    return res.failure(InvalidSyntaxError(self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected '='"))
+                    return res.failure(
+                        InvalidSyntaxError(self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected '='"))
                 self.increment()
                 expr = res.register(self.expr())
                 if res.error: return res
@@ -591,12 +592,12 @@ class Parser:
             if res.error: return res
             return res.success(VarReAssignNode(var_name, expr))
 
-
         node = res.register(self.bin_op(self.comp_expr, ((TT_KEYWORD, 'and'), (TT_KEYWORD, 'or'))))
         if res.error:
             return res.failure(
-                InvalidSyntaxError(self.curr_tok.pos_start, self.curr_tok.pos_end, "Expected 'var', int, float, identifier, '+', '-', '(' or ')'"), self.register_count
-                )
+                InvalidSyntaxError(self.curr_tok.pos_start, self.curr_tok.pos_end,
+                                   "Expected 'var', int, float, identifier, '+', '-', '(' or ')'"), self.register_count
+            )
         return res.success(node)
 
     # INCLUDE
@@ -638,7 +639,6 @@ class Parser:
                     "Expected 'identifier'"
                 ))
         # self.increment()
-
 
     def bin_op(self, func_a, ops, func_b=None):
         if func_b == None:

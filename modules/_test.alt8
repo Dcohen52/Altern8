@@ -14,19 +14,19 @@ end
 
 define fact_recur(n) -> if n == 1 then return n else return n * fact_recur(n-1)
 
-print("Enter a number:"," ")
+print("Enter a number: ")
 var x = read_int()
-print("Enter another number:"," ")
+print("Enter another number: ")
 var y = read_int()
 
 var result = add(x, y)
 var result2 = fact_iter(x)
-print("The result of the addition is: {result}, fact_iter: {result2}","nl")
+print("The result of the addition is: {result}, fact_iter: {result2}\n")
 
 if x % 2 == 0 then
-  print("The number is even", "nl")
+  print("The number is even")
 else
-  print("The number is odd", "nl")
+  print("The number is odd")
 end
 
 #run("modules/example_2.alt8")

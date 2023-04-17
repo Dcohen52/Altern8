@@ -376,7 +376,7 @@ class BuiltInFunction(BaseFunction):
     def execute_print(self, exec_ctx):
         value = exec_ctx.symbol_table.get('value')
         limiter = exec_ctx.symbol_table.get('limiter')
-        if limiter.value == "\n":
+        if limiter.value == "nl":
             print(str(value))
         else:
             print(str(value), end=limiter.value)

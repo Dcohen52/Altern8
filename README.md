@@ -2,7 +2,7 @@
 
 
 # Altern8
-Altern8 is a programming language implemented using Python, this language has been built for educational purposes only and not intended for building large-scale applications yet. This repository includes a lexer, parser, and interpreter. Altern8 has been inspired by prominent languages such as JavaScript, Python, C++, and Kotlin. Example programs can be found in the examples folder.
+Altern8 is a programming language implemented using Python, this language has been built for educational purposes only and not intended for building large-scale applications yet. This repository includes a lexer, parser, and interpreter. Altern8 has been inspired by prominent languages such as JavaScript, Python, C++, and Kotlin. Example programs can be found in the `examples` folder.
 
 ## Setup and Usage
 * Clone this repository.
@@ -75,15 +75,10 @@ Please refer to the original README file for examples of each language feature i
 
 ## Changelog
 
-### 0.0.1 - Initial Release
-* First release of Altern8.
-* Basic language functionality implemented.
-### 0.0.2 - New Builtin Function Added
-* Added a new builtin function `get_functions()` to retrieve functions from an `.alt8` file.
-* 
+Take a look at the `CHANGELOG.md` to see what's new in the latest version of Altern8.
 
 ## Working on
-### Language:
+### Implementation:
 * **Module import** - Module import functionality using `include` keyword.
 * **File handling**:
     * read and write files from the file system.

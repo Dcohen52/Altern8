@@ -1,9 +1,10 @@
 import os
+import re
+
 import altern8
 import datetime
 import tkinter as tk
 from tkinter import filedialog
-import datetime
 
 os.system("cls" if os.name == "nt" else "clear")
 
@@ -29,7 +30,20 @@ def load_test_file():
         return f'run("{default_file_path}")'
 
 
-print(f"""Altern8 (v0.0.2-alpha, April 15, 2023 11:47:36) [Python 3.10.2 (v3.10.2:a58ebcc701)] on darwin.
+# Read version from settings file
+with open(".env", "r") as file:
+    contents = file.read()
+    date_time_match = re.search(r"DATE_TIME=(.+)", contents)
+    current_date_time = date_time_match.group(1)
+    version_match = re.search(r"VERSION=(\d+)\.(\d+)\.(\d+)-(.+)", contents)
+    current_version = version_match.group(0)
+    system_match = re.search(r"SYSTEM=(\S+)", contents)
+    current_os_type = system_match.group(1) if system_match is not None else "unknown"
+    system_type_match = re.search(r"SYSTEM_TYPE=(\S+)", contents)
+    current_system_type = system_type_match.group(1) if system_type_match is not None else "unknown"
+
+print(
+    f"""Altern8 (v{current_version.strip("VERSION=")}, {current_date_time.strip('"')}) [Python 3.10.2 (v3.10.2:a58ebcc701)] on {current_os_type}.
 Type "docs" for general information, supported commands and more.""")
 
 while True:
