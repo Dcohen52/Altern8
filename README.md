@@ -5,8 +5,7 @@
 Altern8 is a programming language implemented using Python, this language has been built for educational purposes only and not intended for building large-scale applications yet. This repository includes a lexer, parser, and interpreter. Altern8 has been inspired by prominent languages such as JavaScript, Python, C++, and Kotlin. Example programs can be found in the `examples` folder.
 
 ## Setup and Usage
-* Clone this repository.
-* Run shell.py in the command line: `python shell.py`
+* Install the interpreter.
 * The Altern8 interpreter will open. To execute an Altern8 program, pass the path of the Altern8 file to the `run()` function: `run("modules\example_2.alt8")`
 
 # Language Features
